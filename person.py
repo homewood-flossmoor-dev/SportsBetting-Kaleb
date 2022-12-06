@@ -11,9 +11,22 @@ class Person:
         self.money -= money
         print("You have substracted: " + str(money) + " from your account")
     def print_payed(self):
-        print("You payed: " + str(self.money))
+        print("Hi,"+ self.username+ " you have a total of :" + str(self.money))
+    def pay_money(self,money,username):
+        self.money -= money
+        for user in users_list:
+            if user.username == username:
+                user.money += money
+        
+        print(self.username + " you have payed: " + str(money) + " dollars to " + username)
 
-person = Person("Juan","1234",100)
-person.add_money(money=100)
-person.substract_money(money=50)
-person.print_payed()
+juan = Person("Juan","1234",400)
+kaleb = Person("Kaleb", "1234", 500)
+users_list = [juan, kaleb]
+kaleb.print_payed()
+juan.print_payed()
+print("------")
+juan.pay_money(200, "Kaleb")
+print("------")
+kaleb.print_payed()
+juan.print_payed()
