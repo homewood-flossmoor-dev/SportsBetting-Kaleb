@@ -30,3 +30,13 @@ juan.pay_money(200, "Kaleb")
 print("------")
 kaleb.print_payed()
 juan.print_payed()
+
+class Match:
+    def __init__(self, teams, score, players, updates, time, overtime, fouls):
+        self.teams = teams
+        self.score = score
+        self.players = players
+        self.updates = updates
+        self.time = time
+        self.overtime = overtime
+        self.fouls = fouls
